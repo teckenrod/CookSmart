@@ -14,6 +14,9 @@
 		5DBEA6C42A7AEA0900F7717C /* CookSmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C22A7AEA0900F7717C /* CookSmart.xcdatamodeld */; };
 		5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */; };
 		5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */; };
+		5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */; };
+		5DBEA6D42A7AF34B00F7717C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D32A7AF34B00F7717C /* FirebaseAuth */; };
+		5DBEA6D62A7AF34B00F7717C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D52A7AF34B00F7717C /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,7 @@
 		5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DBEA6C82A7AEA0B00F7717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DBEA6CA2A7AEA0B00F7717C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBEA6D42A7AF34B00F7717C /* FirebaseAuth in Frameworks */,
+				5DBEA6D62A7AF34B00F7717C /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,7 @@
 				5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */,
 				5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */,
 				5DBEA6CA2A7AEA0B00F7717C /* Info.plist */,
+				5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */,
 				5DBEA6C22A7AEA0900F7717C /* CookSmart.xcdatamodeld */,
 			);
 			path = CookSmart;
@@ -86,6 +93,10 @@
 			dependencies = (
 			);
 			name = CookSmart;
+			packageProductDependencies = (
+				5DBEA6D32A7AF34B00F7717C /* FirebaseAuth */,
+				5DBEA6D52A7AF34B00F7717C /* FirebaseFirestore */,
+			);
 			productName = CookSmart;
 			productReference = 5DBEA6B62A7AEA0900F7717C /* CookSmart.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 5DBEA6AD2A7AEA0900F7717C;
+			packageReferences = (
+				5DBEA6D22A7AF34B00F7717C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5DBEA6B72A7AEA0900F7717C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */,
+				5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */,
 				5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */,
 				5DBEA6C12A7AEA0900F7717C /* Main.storyboard in Resources */,
 			);
@@ -362,6 +377,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DBEA6D22A7AF34B00F7717C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DBEA6D32A7AF34B00F7717C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DBEA6D22A7AF34B00F7717C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5DBEA6D52A7AF34B00F7717C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DBEA6D22A7AF34B00F7717C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5DBEA6C22A7AEA0900F7717C /* CookSmart.xcdatamodeld */ = {
