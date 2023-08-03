@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +53,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6h1-3b-mqh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="mCe-xg-VGw">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="M8L-bb-xRa">
@@ -177,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="bd8-Dn-2ta"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pantry" id="f4G-Jl-koW"/>
                 </viewController>
@@ -227,7 +228,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l6l-eP-PlT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="XP5-0p-nhM"/>
                 </viewController>
@@ -243,7 +244,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vbi-Tx-OIT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Plan" id="flm-7C-oYc">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="EfK-xA-68G">
@@ -271,7 +272,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dlz-pQ-ewj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meal Stats" id="K4x-CL-4Mo"/>
                 </viewController>
@@ -299,6 +300,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="MainColor">
+            <color red="1" green="0.92936673150000004" blue="0.86182294280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
