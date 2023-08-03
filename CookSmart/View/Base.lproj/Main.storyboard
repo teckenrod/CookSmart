@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome Screen Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="phK-Be-wMd">
             <objects>
-                <viewController id="6lI-Ef-er7" customClass="WelcomeScreenController" sceneMemberID="viewController">
+                <viewController id="6lI-Ef-er7" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dez-6f-Ug0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Shopping List"/>
                                 <connections>
-                                    <segue destination="O0U-FR-t0e" kind="show" identifier="ShowList" id="1hE-od-L7T"/>
+                                    <segue destination="4pN-Cv-NcI" kind="show" identifier="ShowList" id="n49-FK-r0d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfA-Xs-NOd">
@@ -75,7 +75,7 @@
         <!--Recipes-->
         <scene sceneID="ESI-yj-ijc">
             <objects>
-                <tableViewController id="zzl-nB-zHJ" sceneMemberID="viewController">
+                <tableViewController id="zzl-nB-zHJ" customClass="CookBookTableViewController" customModule="CookSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VAb-8k-7l8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,83 +97,91 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Recipes" id="17z-fy-aLu"/>
                     <connections>
-                        <segue destination="P9j-1o-6iq" kind="show" identifier="ShowRecipe" id="uV0-c1-lqh"/>
+                        <segue destination="nEe-rf-kwD" kind="show" identifier="ShowRecipe" id="Xen-7y-ULO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ty-AT-4yX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1314" y="15"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="l9b-tx-AZH">
+        <!--Recipe-->
+        <scene sceneID="hVz-tV-25i">
             <objects>
-                <tableViewController id="P9j-1o-6iq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Xyg-Fm-0Yx">
+                <viewController id="nEe-rf-kwD" customClass="RecipeViewController" customModule="CookSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gE8-aa-hpV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-da-Hdm">
+                                <rect key="frame" x="16" y="103" width="361" height="715"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Qp0-As-MuG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="WTR-kD-ulZ"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xDE-g7-r7p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="pIc-7G-e3Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVY-bt-Gt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2209.9236641221373" y="14.788732394366198"/>
+        </scene>
+        <!--Shopping List-->
+        <scene sceneID="VyX-RR-0EZ">
+            <objects>
+                <tableViewController id="4pN-Cv-NcI" customClass="ShoppingListTableViewController" customModule="CookSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Xcu-KK-yXT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EDu-8F-Zms">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bT5-dg-q4w">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EDu-8F-Zms" id="Rhz-1g-Oef">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bT5-dg-q4w" id="A4V-FP-Zvh">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="P9j-1o-6iq" id="yWl-ev-6w2"/>
-                            <outlet property="delegate" destination="P9j-1o-6iq" id="2S9-Ed-fuD"/>
+                            <outlet property="dataSource" destination="4pN-Cv-NcI" id="3w5-dd-7Wo"/>
+                            <outlet property="delegate" destination="4pN-Cv-NcI" id="9I9-bf-cNR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BBA-RO-aIQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kIA-59-jVw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2210" y="15"/>
-        </scene>
-        <!--Shopping List-->
-        <scene sceneID="FyK-8r-La9">
-            <objects>
-                <viewController id="O0U-FR-t0e" customClass="ShoppingListController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q4r-I9-eRG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="xbg-MF-LjX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Shopping List" id="tUK-ey-rw6">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="W2k-hm-uAQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="D6T-Qp-qr2">
+                    <navigationItem key="navigationItem" title="Shopping List" id="kOe-cM-Q2W">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="w8H-NY-S41">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="872-Qy-EJt">
                                 <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Pantry"/>
-                                <connections>
-                                    <segue destination="3yw-C2-A5N" kind="show" identifier="ShowPantry" id="WPM-hz-FMc"/>
-                                </connections>
                             </button>
+                            <connections>
+                                <segue destination="ctu-cB-6rc" kind="show" identifier="ShowPantry" id="41S-YC-peA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L6v-90-F6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faH-Wa-jtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1314" y="756"/>
         </scene>
         <!--Pantry-->
-        <scene sceneID="MHk-p5-eRa">
+        <scene sceneID="GKm-29-Tc5">
             <objects>
-                <viewController id="3yw-C2-A5N" customClass="PantryViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hlp-Vc-LQA">
+                <viewController id="ctu-cB-6rc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spS-2Y-vzM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rwo-14-blk"/>
+                        <viewLayoutGuide key="safeArea" id="bd8-Dn-2ta"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pantry" id="9a6-KN-muf"/>
+                    <navigationItem key="navigationItem" title="Pantry" id="f4G-Jl-koW"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Krn-Ie-zS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1B-mo-DYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2210" y="756"/>
         </scene>
@@ -244,10 +252,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Stats"/>
-                                <connections>
-                                    <segue destination="dQw-jc-6Co" kind="show" identifier="ShowStats" id="5uJ-Me-v3F"/>
-                                </connections>
                             </button>
+                            <connections>
+                                <segue destination="dQw-jc-6Co" kind="show" identifier="ShowStats" id="lI7-2O-ahZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -258,7 +266,7 @@
         <!--Meal Stats-->
         <scene sceneID="gPx-em-ZGS">
             <objects>
-                <viewController id="dQw-jc-6Co" customClass="MealStatsViewController" sceneMemberID="viewController">
+                <viewController id="dQw-jc-6Co" customClass="StatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJb-bk-HYF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
