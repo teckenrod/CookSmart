@@ -16,7 +16,7 @@
 		5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */; };
 		5DBEA6D42A7AF34B00F7717C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D32A7AF34B00F7717C /* FirebaseAuth */; };
 		5DBEA6D62A7AF34B00F7717C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D52A7AF34B00F7717C /* FirebaseFirestore */; };
-		5DBEA6DC2A7BEDF200F7717C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */; };
+		5DBEA6DF2A7BF0BD00F7717C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6DD2A7BF0BD00F7717C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		5DBEA6C82A7AEA0B00F7717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DBEA6CA2A7AEA0B00F7717C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CookSmart/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		5DBEA6DE2A7BF0BD00F7717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 		5DBEA6D82A7BECE500F7717C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */,
+				5DBEA6DD2A7BF0BD00F7717C /* Main.storyboard */,
 				5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -169,7 +169,7 @@
 				5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */,
 				5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */,
 				5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */,
-				5DBEA6DC2A7BEDF200F7717C /* Main.storyboard in Resources */,
+				5DBEA6DF2A7BF0BD00F7717C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +196,14 @@
 				5DBEA6C82A7AEA0B00F7717C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5DBEA6DD2A7BF0BD00F7717C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DBEA6DE2A7BF0BD00F7717C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
