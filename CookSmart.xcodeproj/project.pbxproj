@@ -10,13 +10,13 @@
 		5DBEA6BA2A7AEA0900F7717C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6B92A7AEA0900F7717C /* AppDelegate.swift */; };
 		5DBEA6BC2A7AEA0900F7717C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6BB2A7AEA0900F7717C /* SceneDelegate.swift */; };
 		5DBEA6BE2A7AEA0900F7717C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6BD2A7AEA0900F7717C /* ViewController.swift */; };
-		5DBEA6C12A7AEA0900F7717C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6BF2A7AEA0900F7717C /* Main.storyboard */; };
 		5DBEA6C42A7AEA0900F7717C /* CookSmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C22A7AEA0900F7717C /* CookSmart.xcdatamodeld */; };
 		5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */; };
 		5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */; };
 		5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */; };
 		5DBEA6D42A7AF34B00F7717C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D32A7AF34B00F7717C /* FirebaseAuth */; };
 		5DBEA6D62A7AF34B00F7717C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBEA6D52A7AF34B00F7717C /* FirebaseFirestore */; };
+		5DBEA6DC2A7BEDF200F7717C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +24,12 @@
 		5DBEA6B92A7AEA0900F7717C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBEA6BB2A7AEA0900F7717C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5DBEA6BD2A7AEA0900F7717C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5DBEA6C02A7AEA0900F7717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DBEA6C32A7AEA0900F7717C /* CookSmart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookSmart.xcdatamodel; sourceTree = "<group>"; };
 		5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DBEA6C82A7AEA0B00F7717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DBEA6CA2A7AEA0B00F7717C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CookSmart/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +64,41 @@
 		5DBEA6B82A7AEA0900F7717C /* CookSmart */ = {
 			isa = PBXGroup;
 			children = (
+				5DBEA6DA2A7BED0C00F7717C /* Model */,
+				5DBEA6D82A7BECE500F7717C /* View */,
+				5DBEA6D92A7BECF600F7717C /* Controller */,
 				5DBEA6B92A7AEA0900F7717C /* AppDelegate.swift */,
 				5DBEA6BB2A7AEA0900F7717C /* SceneDelegate.swift */,
-				5DBEA6BD2A7AEA0900F7717C /* ViewController.swift */,
-				5DBEA6BF2A7AEA0900F7717C /* Main.storyboard */,
 				5DBEA6C52A7AEA0B00F7717C /* Assets.xcassets */,
-				5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */,
 				5DBEA6CA2A7AEA0B00F7717C /* Info.plist */,
 				5DBEA6D02A7AF12F00F7717C /* GoogleService-Info.plist */,
 				5DBEA6C22A7AEA0900F7717C /* CookSmart.xcdatamodeld */,
 			);
 			path = CookSmart;
+			sourceTree = "<group>";
+		};
+		5DBEA6D82A7BECE500F7717C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DBEA6DB2A7BEDF200F7717C /* Main.storyboard */,
+				5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5DBEA6D92A7BECF600F7717C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DBEA6BD2A7AEA0900F7717C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5DBEA6DA2A7BED0C00F7717C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +169,7 @@
 				5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */,
 				5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */,
 				5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */,
-				5DBEA6C12A7AEA0900F7717C /* Main.storyboard in Resources */,
+				5DBEA6DC2A7BEDF200F7717C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,14 +190,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5DBEA6BF2A7AEA0900F7717C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DBEA6C02A7AEA0900F7717C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
