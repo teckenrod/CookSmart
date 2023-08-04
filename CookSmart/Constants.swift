@@ -28,4 +28,10 @@ struct K {
     struct FStore {
         
     }
+    
+    struct AccText {
+        static let login = "Login"
+        static let register = "Register"
+        static let logout = "Log Out"
+    }
 }

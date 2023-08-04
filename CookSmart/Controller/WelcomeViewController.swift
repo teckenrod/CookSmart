@@ -6,12 +6,26 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 class WelcomeViewController: UIViewController {
 
+    // IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var topRightButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let user = Auth.auth().currentUser?.email {
+            topRightButton.setTitle(user, for: .normal)
+            // print("User signed in")
+        } else {
+            topRightButton.setTitle("Login / Register", for: .normal)
+            // print("No user signed in")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
