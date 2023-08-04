@@ -16,7 +16,6 @@ struct K {
         static let toStats = "ShowStats"
         static let toRecipe = "ShowRecipe"
         static let toPantry = "ShowPantry"
-        
     }
     
     struct Colors {
@@ -33,5 +32,39 @@ struct K {
         static let login = "Login"
         static let register = "Register"
         static let logout = "Log Out"
+    }
+    
+//    struct TimeUnits {
+//        static let min = "Min"
+//        static let mins = "Mins"
+//        static let hour = "Hr"
+//        static let hours = "Hrs"
+//    }
+    
+    struct MealTypes {
+        static let breakfast = "Breakfast"
+        static let meal = "Meal"
+        static let snack = "Snack"
+        static let dessert = "Dessert"
+    }
+    
+    struct Allergies {
+        static let wheat = "Wheat"
+        static let eggs = "Eggs"
+        static let soy = "Soy"
+        static let dairy = "Dairy"
+        static let shellfish = "Shellfish"
+        static let peanuts = "Peanuts"
+        static let nuts = "Nuts"
+        static let seeds = "Seeds"
+    }
+    
+    struct Measurements {
+        
+    }
+    
+    struct Misc {
+        static let cellIdentifier = "RecipeTableViewCell"
+        static let cellNibName = "RecipeTableViewCell"
     }
 }

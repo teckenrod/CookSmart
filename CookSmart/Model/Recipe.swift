@@ -8,8 +8,12 @@
 import Foundation
 
 struct Recipe {
+    let recipeName: String
     let user: String
-    let time: Double
-    let timeUnit: String
+    let timeMins: Double
     let ingredients: [Ingredient]
+    let instructions: [String]
+    let mealType: String
+    let servings: Int
+    let allergens: [String]
 }

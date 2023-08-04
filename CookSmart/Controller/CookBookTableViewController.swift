@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class CookBookTableViewController: UITableViewController {
-
+    
+    let db = Firestore.firestore()
+    
+    var recipes: [Recipe] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,24 +27,26 @@ class CookBookTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return recipes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let recipe = recipes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Misc.cellIdentifier, for: indexPath) as! RecipeTableViewCell
+        cell.recipeTitle.text = recipe.recipeName
+        cell.timeLabel.text = "\(recipe.timeMins) min(s)"
+        cell.servingsLabel.text = String(recipe.servings)
+        cell.mealTypeLabel.text = recipe.mealType
+        // cell.mealImageView.image = image
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

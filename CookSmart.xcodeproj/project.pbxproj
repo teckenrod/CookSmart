@@ -27,6 +27,9 @@
 		5DBEA6F72A7C03DA00F7717C /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F62A7C03DA00F7717C /* ShoppingListTableViewController.swift */; };
 		5DBEA6F92A7D351200F7717C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F82A7D351200F7717C /* Ingredient.swift */; };
 		5DBEA6FB2A7D352000F7717C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6FA2A7D352000F7717C /* Recipe.swift */; };
+		5DBEA6FE2A7D3C8800F7717C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6FC2A7D3C8800F7717C /* RecipeTableViewCell.swift */; };
+		5DBEA6FF2A7D3C8800F7717C /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBEA6FD2A7D3C8800F7717C /* RecipeTableViewCell.xib */; };
+		5DBEA7032A7D517000F7717C /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA7022A7D517000F7717C /* AddRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		5DBEA6F62A7C03DA00F7717C /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		5DBEA6F82A7D351200F7717C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		5DBEA6FA2A7D352000F7717C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		5DBEA6FC2A7D3C8800F7717C /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		5DBEA6FD2A7D3C8800F7717C /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		5DBEA7022A7D517000F7717C /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 			children = (
 				5DBEA6DD2A7BF0BD00F7717C /* Main.storyboard */,
 				5DBEA6C72A7AEA0B00F7717C /* LaunchScreen.storyboard */,
+				5DBEA6FC2A7D3C8800F7717C /* RecipeTableViewCell.swift */,
+				5DBEA6FD2A7D3C8800F7717C /* RecipeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 				5DBEA6F02A7C021C00F7717C /* PlanViewController.swift */,
 				5DBEA6F42A7C02C900F7717C /* PantryTableViewController.swift */,
 				5DBEA6F62A7C03DA00F7717C /* ShoppingListTableViewController.swift */,
+				5DBEA7022A7D517000F7717C /* AddRecipeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +208,7 @@
 				5DBEA6C92A7AEA0B00F7717C /* LaunchScreen.storyboard in Resources */,
 				5DBEA6D12A7AF12F00F7717C /* GoogleService-Info.plist in Resources */,
 				5DBEA6C62A7AEA0B00F7717C /* Assets.xcassets in Resources */,
+				5DBEA6FF2A7D3C8800F7717C /* RecipeTableViewCell.xib in Resources */,
 				5DBEA6DF2A7BF0BD00F7717C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +226,9 @@
 				5DBEA6E32A7BF26800F7717C /* WelcomeViewController.swift in Sources */,
 				5DBEA6ED2A7BF77A00F7717C /* AccountViewController.swift in Sources */,
 				5DBEA6E92A7BF5D900F7717C /* RecipeViewController.swift in Sources */,
+				5DBEA6FE2A7D3C8800F7717C /* RecipeTableViewCell.swift in Sources */,
 				5DBEA6BA2A7AEA0900F7717C /* AppDelegate.swift in Sources */,
+				5DBEA7032A7D517000F7717C /* AddRecipeViewController.swift in Sources */,
 				5DBEA6BC2A7AEA0900F7717C /* SceneDelegate.swift in Sources */,
 				5DBEA6E52A7BF28F00F7717C /* CookBookTableViewController.swift in Sources */,
 				5DBEA6FB2A7D352000F7717C /* Recipe.swift in Sources */,
