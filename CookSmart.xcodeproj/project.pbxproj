@@ -25,6 +25,8 @@
 		5DBEA6F12A7C021C00F7717C /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F02A7C021C00F7717C /* PlanViewController.swift */; };
 		5DBEA6F52A7C02C900F7717C /* PantryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F42A7C02C900F7717C /* PantryTableViewController.swift */; };
 		5DBEA6F72A7C03DA00F7717C /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F62A7C03DA00F7717C /* ShoppingListTableViewController.swift */; };
+		5DBEA6F92A7D351200F7717C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6F82A7D351200F7717C /* Ingredient.swift */; };
+		5DBEA6FB2A7D352000F7717C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEA6FA2A7D352000F7717C /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5DBEA6F02A7C021C00F7717C /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		5DBEA6F42A7C02C900F7717C /* PantryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryTableViewController.swift; sourceTree = "<group>"; };
 		5DBEA6F62A7C03DA00F7717C /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		5DBEA6F82A7D351200F7717C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		5DBEA6FA2A7D352000F7717C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 		5DBEA6DA2A7BED0C00F7717C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DBEA6F82A7D351200F7717C /* Ingredient.swift */,
+				5DBEA6FA2A7D352000F7717C /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBEA6C42A7AEA0900F7717C /* CookSmart.xcdatamodeld in Sources */,
+				5DBEA6F92A7D351200F7717C /* Ingredient.swift in Sources */,
 				5DBEA6F12A7C021C00F7717C /* PlanViewController.swift in Sources */,
 				5DBEA6E32A7BF26800F7717C /* WelcomeViewController.swift in Sources */,
 				5DBEA6ED2A7BF77A00F7717C /* AccountViewController.swift in Sources */,
@@ -212,6 +219,7 @@
 				5DBEA6BA2A7AEA0900F7717C /* AppDelegate.swift in Sources */,
 				5DBEA6BC2A7AEA0900F7717C /* SceneDelegate.swift in Sources */,
 				5DBEA6E52A7BF28F00F7717C /* CookBookTableViewController.swift in Sources */,
+				5DBEA6FB2A7D352000F7717C /* Recipe.swift in Sources */,
 				5DBEA6F52A7C02C900F7717C /* PantryTableViewController.swift in Sources */,
 				5DBEA6EF2A7C01C100F7717C /* StatsViewController.swift in Sources */,
 				5DBEA6E72A7BF56B00F7717C /* Constants.swift in Sources */,
