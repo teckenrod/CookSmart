@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,6 +34,7 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="DarkAccentColor"/>
             <connections>
                 <outlet property="instructionLabel" destination="UU5-yG-2fd" id="Jd4-j6-ee3"/>
                 <outlet property="instructionNumLabel" destination="gjh-XI-U7W" id="ZXy-O2-4rA"/>
@@ -40,4 +42,9 @@
             <point key="canvasLocation" x="-50.381679389312978" y="-11.267605633802818"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="DarkAccentColor">
+            <color red="0.1076381152" green="0.20120809540000001" blue="0.14710101489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
