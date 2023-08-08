@@ -36,6 +36,9 @@ class AddRecipeViewController: UIViewController {
     let user = Auth.auth().currentUser
     var ingredients: [Ingredient] = []
     var instructions: [String] = []
+    var allergens: [String] = []
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +81,8 @@ class AddRecipeViewController: UIViewController {
             UIAction(title: "Breakfast", handler: popUpButtonClosure),
             UIAction(title: "Meal", handler: popUpButtonClosure),
             UIAction(title: "Snack", handler: popUpButtonClosure),
-            UIAction(title: "Dessert", handler: popUpButtonClosure)
+            UIAction(title: "Dessert", handler: popUpButtonClosure),
+            UIAction(title: "Sauce", handler: popUpButtonClosure)
         ])
         
         // servings pop up button
@@ -114,7 +118,7 @@ class AddRecipeViewController: UIViewController {
         // reset ingredient input
         ingredientTextField.text = ""
         ingredientAmountTextField.text = ""
-        ingredientUnitDropDown.setTitle("Cup", for: .normal)
+        ingredientUnitDropDown.setTitle("C", for: .normal)
         
         // add ingredient to text view
         DispatchQueue.main.async {
@@ -139,6 +143,28 @@ class AddRecipeViewController: UIViewController {
     }
     
     @IBAction func saveRecipe(_ sender: UIButton) {
+        var ing: [String] = []
+        for i in ingredients {
+            ing.append("\(i.item),\(i.amount),\(i.unit)")
+        }
+        let doc: [String: Any] = [
+            K.FStore.nameField: recipeNameTextField.text!,
+            K.FStore.userField: (Auth.auth().currentUser?.email!)!,
+            K.FStore.timeField: Date().timeIntervalSince1970,
+            K.FStore.typeField: (mealTypeDropDown.titleLabel?.text!)!,
+            K.FStore.servingsField: (servingsDropDown.titleLabel?.text!)!,
+            K.FStore.ingredientsField: ing,
+            K.FStore.instructionField: instructions,
+            K.FStore.allergensField: allergens
+        ]
+        
+        db.collection(K.FStore.collectionName).addDocument(data: doc) { err in
+            if let e = err {
+                print(e.localizedDescription)
+            } else {
+                print("Recipe Saved to DB")
+            }
+        }
     }
     
 }
@@ -169,7 +195,7 @@ extension AddRecipeViewController: UITableViewDataSource {
             print("Instruction Table View")
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Misc.InstructionCellIdentifier, for: indexPath) as! InstructionTableViewCell
             cell.instructionLabel?.text = instructions[indexPath.row]
-            cell.instructionNumLabel?.text = String(instructions.count)
+            cell.instructionNumLabel?.text = String(indexPath.row + 1)
             return cell
         default:
             print("No Table View")

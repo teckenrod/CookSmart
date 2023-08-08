@@ -25,7 +25,15 @@ struct K {
     }
     
     struct FStore {
-        
+        static let collectionName = "recipes"
+        static let nameField = "name"
+        static let userField = "user"
+        static let timeField = "time"
+        static let typeField = "type"
+        static let servingsField = "servings"
+        static let ingredientsField = "ingredients"
+        static let instructionField = "instructions"
+        static let allergensField = "allergens"
     }
     
     struct AccText {
