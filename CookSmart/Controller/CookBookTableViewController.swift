@@ -37,7 +37,7 @@ class CookBookTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let recipe = recipes[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Misc.cellIdentifier, for: indexPath) as! RecipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Misc.RecipeCellIdentifier, for: indexPath) as! RecipeTableViewCell
         cell.recipeTitle.text = recipe.recipeName
         cell.timeLabel.text = "\(recipe.timeMins) min(s)"
         cell.servingsLabel.text = String(recipe.servings)

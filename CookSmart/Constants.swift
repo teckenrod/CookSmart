@@ -64,7 +64,8 @@ struct K {
     }
     
     struct Misc {
-        static let cellIdentifier = "RecipeTableViewCell"
-        static let cellNibName = "RecipeTableViewCell"
+        static let RecipeCellIdentifier = "RecipeTableViewCell"
+        static let InstructionCellIdentifier = "InstructionTableViewCell"
+        static let IngredientCellIndentifier = "IngredientTableViewCell"
     }
 }

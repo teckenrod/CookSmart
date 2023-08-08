@@ -40,7 +40,11 @@ class AddRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ingredientTableView.dataSource = self
+        instructionTableView.dataSource = self
+        
+        ingredientTableView.register(UINib(nibName: K.Misc.IngredientCellIndentifier, bundle: nil), forCellReuseIdentifier: K.Misc.IngredientCellIndentifier)
+        instructionTableView.register(UINib(nibName: K.Misc.InstructionCellIdentifier, bundle: nil), forCellReuseIdentifier: K.Misc.InstructionCellIdentifier)
     }
     
     @IBAction func addIngredient(_ sender: UIButton) {
@@ -55,23 +59,56 @@ class AddRecipeViewController: UIViewController {
         
         // reset ingredient input
         ingredientTextField.text = ""
-        ingredientTextField.text = ""
+        ingredientAmountTextField.text = ""
         ingredientUnitDropDown.setTitle("Cup", for: .normal)
         
         // add ingredient to text view
+        DispatchQueue.main.async {
+            self.ingredientTableView.reloadData()
+        }
     }
     
     @IBAction func addInstruction(_ sender: UIButton) {
         // get instruction info
-        
-        // create instruction item
+        let instruction = instructionTextField.text!
         
         // reset instruction input
+        instructionTextField.text = ""
         
         // add instruction to text view
+        DispatchQueue.main.async {
+            self.instructionTableView.reloadData()
+        }
     }
     
     @IBAction func saveRecipe(_ sender: UIButton) {
     }
     
+}
+
+//MARK: - UITableViewDataSource
+extension AddRecipeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var returnVal = 0
+        if tableView == ingredientTableView {
+            returnVal = ingredients.count
+        } else if  tableView == instructionTableView {
+            returnVal = instructions.count
+        }
+        return returnVal
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var returnCell = UITableViewCell()
+        if tableView == ingredientTableView {
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: K.Misc.IngredientCellIndentifier, for: indexPath) as! IngredientTableViewCell
+            returnCell.ingredientLabel.text = ingredients[indexPath.row].item
+            returnCell.amountLabel.text = String(ingredients[indexPath.row].amount)
+        } else if  tableView == instructionTableView {
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: K.Misc.InstructionCellIdentifier, for: indexPath) as! InstructionTableViewCell
+            returnCell.instructionLabel.text = instructions[indexPath.row]
+            returnCell.instructionNumLabel.text = String(instructions.count)
+        }
+        return returnCell
+    }
 }
