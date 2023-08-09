@@ -17,11 +17,41 @@ class CookBookTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.register(UINib(nibName: K.Misc.RecipeCellIdentifier, bundle: nil), forCellReuseIdentifier: K.Misc.RecipeCellIdentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadRecipes()
+    }
+    
+    func loadRecipes() {
+        db.collection(K.FStore.collectionName).order(by: K.FStore.typeField).addSnapshotListener { (querySnapshot, error) in
+            self.recipes = []
+            
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                if let snapshotDocs = querySnapshot?.documents {
+                    for doc in snapshotDocs {
+                        let data = doc.data()
+                        if let recipeName = data[K.FStore.nameField] as? String,
+                           let recipeTime = data[K.FStore.timeField] as? Int,
+                           let recipeType = data[K.FStore.typeField] as? String,
+                           let recipeServings = data[K.FStore.servingsField] as? Int
+                        {
+                            let newRecipe = Recipe(recipeName: recipeName, user:  "", timeMins: recipeTime, ingredients: [], instructions: [], mealType: recipeType, servings: recipeServings, allergens: [])
+                            self.recipes.append(newRecipe)
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source

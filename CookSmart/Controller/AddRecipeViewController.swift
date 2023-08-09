@@ -145,14 +145,14 @@ class AddRecipeViewController: UIViewController {
     @IBAction func saveRecipe(_ sender: UIButton) {
         var ing: [String] = []
         for i in ingredients {
-            ing.append("\(i.item),\(i.amount),\(i.unit)")
+            ing.append("\(i.item) \(i.amount) \(i.unit)")
         }
         let doc: [String: Any] = [
             K.FStore.nameField: recipeNameTextField.text!,
             K.FStore.userField: (Auth.auth().currentUser?.email!)!,
-            K.FStore.timeField: Date().timeIntervalSince1970,
+            K.FStore.timeField: Int((timeHrsDropDown.titleLabel?.text!)!)! * 60 + Int((timeMinsDropDown.titleLabel?.text!)!)!,
             K.FStore.typeField: (mealTypeDropDown.titleLabel?.text!)!,
-            K.FStore.servingsField: (servingsDropDown.titleLabel?.text!)!,
+            K.FStore.servingsField: Int((servingsDropDown.titleLabel?.text!)!)!,
             K.FStore.ingredientsField: ing,
             K.FStore.instructionField: instructions,
             K.FStore.allergensField: allergens
@@ -162,7 +162,7 @@ class AddRecipeViewController: UIViewController {
             if let e = err {
                 print(e.localizedDescription)
             } else {
-                print("Recipe Saved to DB")
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

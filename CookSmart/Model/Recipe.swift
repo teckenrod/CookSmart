@@ -10,7 +10,7 @@ import Foundation
 struct Recipe {
     let recipeName: String
     let user: String
-    let timeMins: Double
+    let timeMins: Int
     let ingredients: [Ingredient]
     let instructions: [String]
     let mealType: String
