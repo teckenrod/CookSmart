@@ -52,6 +52,9 @@ class AddRecipeViewController: UIViewController {
         instructionTableView.register(UINib(nibName: K.Misc.InstructionCellIdentifier, bundle: nil), forCellReuseIdentifier: K.Misc.InstructionCellIdentifier)
         
         setUpPopUpButtons()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     func setUpPopUpButtons() {
@@ -82,7 +85,8 @@ class AddRecipeViewController: UIViewController {
             UIAction(title: "Meal", handler: popUpButtonClosure),
             UIAction(title: "Snack", handler: popUpButtonClosure),
             UIAction(title: "Dessert", handler: popUpButtonClosure),
-            UIAction(title: "Sauce", handler: popUpButtonClosure)
+            UIAction(title: "Sauce", handler: popUpButtonClosure),
+            UIAction(title: "Side", handler: popUpButtonClosure)
         ])
         
         // servings pop up button
@@ -104,6 +108,10 @@ class AddRecipeViewController: UIViewController {
             UIAction(title: "g", handler: popUpButtonClosure)
         ])
     }
+                                         
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
     
     @IBAction func addIngredient(_ sender: UIButton) {
         // get ingredient info
@@ -145,7 +153,7 @@ class AddRecipeViewController: UIViewController {
     @IBAction func saveRecipe(_ sender: UIButton) {
         var ing: [String] = []
         for i in ingredients {
-            ing.append("\(i.item) \(i.amount) \(i.unit)")
+            ing.append("\(i.item),\(i.amount),\(i.unit)")
         }
         let doc: [String: Any] = [
             K.FStore.nameField: recipeNameTextField.text!,
@@ -166,7 +174,6 @@ class AddRecipeViewController: UIViewController {
             }
         }
     }
-    
 }
 
 //MARK: - UITableViewDataSource
@@ -194,12 +201,36 @@ extension AddRecipeViewController: UITableViewDataSource {
         case instructionTableView:
             print("Instruction Table View")
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Misc.InstructionCellIdentifier, for: indexPath) as! InstructionTableViewCell
-            cell.instructionLabel?.text = instructions[indexPath.row]
+            cell.instructionLabel?.text = instructions[indexPath.row].split(separator: ",").joined(separator: " ")
             cell.instructionNumLabel?.text = String(indexPath.row + 1)
             return cell
         default:
             print("No Table View")
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            switch(tableView) {
+            case ingredientTableView:
+                ingredients.remove(at: indexPath.row)
+            case instructionTableView:
+                instructions.remove(at: indexPath.row)
+            default:
+                print(tableView)
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }

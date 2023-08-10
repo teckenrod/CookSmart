@@ -37,11 +37,19 @@ class CookBookTableViewController: UITableViewController {
                     for doc in snapshotDocs {
                         let data = doc.data()
                         if let recipeName = data[K.FStore.nameField] as? String,
+                           let recipeUser = data[K.FStore.userField] as? String,
                            let recipeTime = data[K.FStore.timeField] as? Int,
+                           let recipeIngredients = data[K.FStore.ingredientsField] as? [String],
+                           let recipeInstructions = data[K.FStore.instructionField] as? [String],
                            let recipeType = data[K.FStore.typeField] as? String,
                            let recipeServings = data[K.FStore.servingsField] as? Int
                         {
-                            let newRecipe = Recipe(recipeName: recipeName, user:  "", timeMins: recipeTime, ingredients: [], instructions: [], mealType: recipeType, servings: recipeServings, allergens: [])
+                            var ings: [Ingredient] = []
+                            for recipe in recipeIngredients {
+                                let recipeArr = recipe.split(separator: ",")
+                                ings.append(Ingredient(item: String(recipeArr[0]), amount: Double(recipeArr[1].replacing(" ", with: ""))!, unit: String(recipeArr[2])))
+                            }
+                            let newRecipe = Recipe(recipeName: recipeName, user: recipeUser, timeMins: recipeTime, ingredients: ings, instructions: recipeInstructions, mealType: recipeType, servings: recipeServings, allergens: [])
                             self.recipes.append(newRecipe)
                             
                             DispatchQueue.main.async {
@@ -77,7 +85,30 @@ class CookBookTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segues.toRecipe, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.toRecipe,
+           let next = segue.destination as? RecipeViewController,
+           let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedRecipe = recipes[indexPath.row]
+            next.currentRecipe = selectedRecipe
+        }
+    }
+    
+    /*
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            recipes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    */
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
