@@ -16,4 +16,5 @@ struct Recipe {
     let mealType: String
     let servings: Int
     let allergens: [String]
+    let ID: String
 }

@@ -62,6 +62,22 @@ class AddRecipeViewController: UIViewController {
             // print("Pop-up action")
         }
         
+        // pop up for other units
+        let otherPopUpButtonClosure = { (action: UIAction) in
+            let dialogMessage = UIAlertController(title: "Unit Entry", message: "What would you like the unit for this ingredient to be?", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: {_ in
+                print(dialogMessage.textFields?.first?.text ?? "")
+            })
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            dialogMessage.addTextField()
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            
+            self.present(dialogMessage, animated: true)
+        }
+        
         // time hrs pop up button
         timeHrsDropDown.showsMenuAsPrimaryAction = true
         var timeHrsOptions: [UIAction] = []
@@ -99,13 +115,15 @@ class AddRecipeViewController: UIViewController {
         
         // ingredient unit pop up button
         ingredientUnitDropDown.showsMenuAsPrimaryAction = true
+        var otherButtonAction = UIAction(title: "other", handler: otherPopUpButtonClosure)
         ingredientUnitDropDown.menu = UIMenu(children: [
             UIAction(title: "C", handler: popUpButtonClosure),
             UIAction(title: "Oz", handler: popUpButtonClosure),
             UIAction(title: "Fl Oz", handler: popUpButtonClosure),
             UIAction(title: "tsp", handler: popUpButtonClosure),
             UIAction(title: "Tbsp", handler: popUpButtonClosure),
-            UIAction(title: "g", handler: popUpButtonClosure)
+            UIAction(title: "g", handler: popUpButtonClosure),
+            otherButtonAction
         ])
     }
                                          

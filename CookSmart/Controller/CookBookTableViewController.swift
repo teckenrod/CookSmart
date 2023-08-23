@@ -49,7 +49,7 @@ class CookBookTableViewController: UITableViewController {
                                 let recipeArr = recipe.split(separator: ",")
                                 ings.append(Ingredient(item: String(recipeArr[0]), amount: Double(recipeArr[1].replacing(" ", with: ""))!, unit: String(recipeArr[2])))
                             }
-                            let newRecipe = Recipe(recipeName: recipeName, user: recipeUser, timeMins: recipeTime, ingredients: ings, instructions: recipeInstructions, mealType: recipeType, servings: recipeServings, allergens: [])
+                            let newRecipe = Recipe(recipeName: recipeName, user: recipeUser, timeMins: recipeTime, ingredients: ings, instructions: recipeInstructions, mealType: recipeType, servings: recipeServings, allergens: [], ID: doc.documentID)
                             self.recipes.append(newRecipe)
                             
                             DispatchQueue.main.async {
